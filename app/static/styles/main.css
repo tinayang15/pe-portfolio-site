@@ -73,3 +73,15 @@ body {
     width: 300px;
     height: 275px;
 }
+
+.aboutImg {
+    width: 350px;
+    height: 350px;
+}
+
+.home-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
