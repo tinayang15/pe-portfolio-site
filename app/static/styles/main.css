@@ -97,3 +97,20 @@ body {
 section {
     padding: 160px 15% 120px;
 }
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #385775;
+    border-radius: 5px;
+    color: #ccc;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all .45s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    transform: scale(0.9);
+}
