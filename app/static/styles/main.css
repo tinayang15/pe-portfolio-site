@@ -85,3 +85,11 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.home {
+    background-color: #9AADBF
+}
+
+.about {
+    background-color: #6D98BA
+}
