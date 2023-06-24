@@ -1,35 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta property="og:title" content="Personal Portfolio">
-    <meta property="og:description" content="My Personal Portfolio">
-    <meta property="og:url" content="{{ url }}">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-
-    <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
-    <link rel='icon' href='../static/img/Screenshot 2023-06-22 at 11.19.16 PM.png' type='image/x-icon' />
-    <title>{{ name }}</title>
-</head>
+    <head>
+        {% include "head.html" %}
+    </head>
 
 <body>
-    <header class="nav-bar">
-        <!-- Nav bar should go here -->
-        <div class="nav-content">
-            <a href="/">
-                <div class="nav-logo">
-                    <!-- <img src="./static/img/logo.svg" /> -->
-                </div>
-            </a>
-        </div>
+    
+    <header>
+        {% include "navigation.html" %}
     </header>
+
     <section class="home" id="home">
         <div class="home-text">
             <div id="profile-picture" class="profile-picture">
@@ -72,6 +53,7 @@
             </div>
         </div>
     </section>
+    {% include "scripts.html" %}
 </body>
 
 </html>
