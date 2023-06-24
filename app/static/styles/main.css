@@ -171,3 +171,55 @@ section {
 .container {
     padding: 160px 15% 120px;
 }
+
+.intro {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    ;
+}
+
+.intro .introduction {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.intro .name {
+    margin-left: 15px;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+.name li {
+    list-style: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    position: relative;
+    top: 0;
+}
+
+.name li span {
+    position: relative;
+}
+
+.name li span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #6D98BA;
+    border-left: 2px solid black;
+    animation: typing 3.0s steps(14) infinite;
+}
+
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
