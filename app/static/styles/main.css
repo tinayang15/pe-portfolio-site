@@ -140,3 +140,18 @@ section {
     visibility: visible;
     transform: scaleX(1);
 }
+
+.hobbies {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.hobbies-sect {
+    background-color: #9AADBF
+}
+
+.container {
+    padding: 160px 15% 120px;
+}

@@ -13,3 +13,7 @@ def index():
 @app.route ('/work')
 def work():
     return render_template('work.html')
+
+@app.route('/hobbies')
+def hobbies():
+    return render_template('hobbies.html')
