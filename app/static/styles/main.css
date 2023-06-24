@@ -98,10 +98,10 @@ section {
     padding: 160px 15% 120px;
 }
 
-.btn {
+/* .btn {
     display: inline-block;
     padding: 12px 28px;
-    background: #385775;
+    background: red;
     border-radius: 5px;
     color: #ccc;
     font-size: 1rem;
@@ -109,7 +109,7 @@ section {
     font-weight: 600;
     transition: all .45s ease;
     text-decoration: none;
-}
+} */
 
 .btn:hover {
     transform: scale(0.9);
@@ -120,4 +120,80 @@ section {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.experience {
+    background-color: #6D98BA
+}
+
+.timeline {
+    list-style: none;
+    padding: 20px 0 20px;
+    position: relative;
+}
+
+.timeline:before {
+    background-color: #dee2e6;
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 2px;
+}
+
+.timeline li {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.timeline li:before,
+.timeline li:after {
+    content: '';
+    display: table;
+}
+
+.timeline li:after {
+    clear: both;
+}
+
+.timeline-badge {
+    background-color: #007bff;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 16px;
+    height: 40px;
+    left: 0;
+    line-height: 40px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 40px;
+}
+
+.timeline-panel {
+    background-color: #f7f7f7;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    margin-left: 60px;
+    padding: 20px;
+    position: relative;
+}
+
+.timeline-heading h4 {
+    margin-top: 0;
+}
+
+.timeline-heading p {
+    margin-bottom: 0;
+    color: #999999;
+}
+
+.timeline-body p {
+    margin-bottom: 0;
+}
+
+.timeline .timeline-title {
+    margin-top: 0;
+    color: inherit;
 }
