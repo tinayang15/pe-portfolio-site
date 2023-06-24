@@ -1,6 +1,9 @@
 .myImg {
     width: 300px;
     height: 275px;
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: 5px 7px black;
 }
 
 .aboutImg {
@@ -19,11 +22,24 @@
     background-color: #6D98BA
 }
 
+.home-text {
+    /* background-color: white; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50vh;
+}
+
+
 .about {
     background-color: #9AADBF
 }
 
 section {
+    width: 100vw;
+    height: 100vh;
     padding: 160px 15% 120px;
 }
 
