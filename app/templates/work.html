@@ -2,14 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link lang='sass' rel="stylesheet" href="../static/styles/work.css">
-    <title>Work Experience</title>
+    {% include "head.html" %}
 </head>
 
 <body>
+
+    <header>
+        {% include "navigation.html" %}
+    </header>
+
+
     <section class="experience" id="experience">
         <div class="work">
             <h2>Work Experience</h2>
@@ -114,6 +116,7 @@
             </ul>
         </div>
     </section>
+    {% include "scripts.html" %}
 </body>
 
 </html>
