@@ -3,9 +3,63 @@
 
 <head>
     {% include "head.html" %}
+    <style>
+        .scroll-arrow {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .scroll-arrow i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+        }
+
+        .scroll-arrow:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .scroll-arrow-up {
+            position: relative;
+            bottom: -10vh;
+            right: -75vw;
+            /* transform: translateX(-50%); */
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            z-index: 9999;
+        }
+
+        .scroll-arrow-up i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+        }
+
+        .scroll-arrow-up:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navbar" data-offset="80">
 
     <header>
         {% include "navigation.html" %}
@@ -21,27 +75,29 @@
                     <div class="introduction"></div>
                     <ul class="name">
                         <li>
-                            <span>Hello, I'm Caleb!</span>
+                            <span>&#x1F44B; Hello, I'm Caleb!</span>
                         </li>
                     </ul>
                 </div>
-                <h3>Product Engineer.</h3>
-                <p> As a driven and inventive product engineer, my unwavering passion lies in the realms of site
+                <h3 class="role">Site Reliability Engineer.</h3>
+                <p class="brand"> As a driven and inventive product engineer, my unwavering passion lies in the realms
+                    of site
                     reliability
                     and scalable solutions. With a steadfast commitment to excellence, I continuously seek opportunities
                     to
                     push boundaries and deliver impactful results.</p>
             </div>
         </div>
-        </div>
+        <a href="#about" class="scroll-arrow"><i class="fas fa-arrow-down"></i></a>
     </section>
 
     <section class="about" id="about">
         <div class="aboutSection">
             <div class="about-text">
                 <h2> About Me</h2>
-                <h4>Product Engineer</h4>
-                <p> I am a highly motivated and creative product engineer with a passion for site reliability and
+                <h4 class="role">Site Reliability Engineer</h4>
+                <p class="about-descript"> I am a highly motivated and creative product engineer with a passion for site
+                    reliability and
                     scalable
                     solutions. I attended Syracuse University, majoring in Computer Science, where I honed my technical
                     skills and gained a deep understanding of software development. With a commitment to excellence, I
@@ -62,6 +118,7 @@
                 <img src="../static/img/caleb_img1.png" alt="" class="aboutImg">
             </div>
         </div>
+        <a href="#home" class="scroll-arrow-up"><i class="fas fa-arrow-up"></i></a>
     </section>
     {% include "scripts.html" %}
 </body>
