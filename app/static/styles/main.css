@@ -1,14 +1,19 @@
 .myImg {
-    width: 300px;
-    height: 275px;
+    width: 450px;
+    height: 425px;
     border-radius: 10px;
     border: 2px solid black;
     box-shadow: 5px 7px black;
+    margin: 0 80px 0 0;
 }
 
 .aboutImg {
-    width: 350px;
-    height: 350px;
+    width: 450px;
+    height: 450px;
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: 5px 7px black;
+    margin: 0 0 0 80px;
 }
 
 .home-text {
@@ -200,6 +205,7 @@ section {
 
 .name li span {
     position: relative;
+    text-shadow: 2px 2px 4px rgb(119, 119, 173);
 }
 
 .name li span::after {
@@ -220,10 +226,18 @@ section {
     }
 }
 
-.intro-container {
+.intro-container,
+.about-text {
     margin: 0 0 0 20px;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
+    font-weight: 400;
+    text-shadow: 1px 1px 10px rgb(196, 196, 237);
+    max-width: 550px;
+}
+
+.role {
+    font-size: 18px;
+}
+
+.brand {
+    font-style: italic;
 }
