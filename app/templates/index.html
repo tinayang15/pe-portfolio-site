@@ -3,9 +3,63 @@
 
 <head>
     {% include "head.html" %}
+    <style>
+        .scroll-arrow {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .scroll-arrow i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+        }
+
+        .scroll-arrow:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .scroll-arrow-up {
+            position: relative;
+            bottom: -20vh;
+            right: -75vw;
+            /* transform: translateX(-50%); */
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            z-index: 9999;
+        }
+
+        .scroll-arrow-up i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+        }
+
+        .scroll-arrow-up:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navbar" data-offset="80">
 
     <header>
         {% include "navigation.html" %}
@@ -33,7 +87,7 @@
                     push boundaries and deliver impactful results.</p>
             </div>
         </div>
-        </div>
+        <a href="#about" class="scroll-arrow"><i class="fas fa-arrow-down"></i></a>
     </section>
 
     <section class="about" id="about">
@@ -62,6 +116,7 @@
                 <img src="../static/img/caleb_img1.png" alt="" class="aboutImg">
             </div>
         </div>
+        <a href="#home" class="scroll-arrow-up"><i class="fas fa-arrow-up"></i></a>
     </section>
     {% include "scripts.html" %}
 </body>
