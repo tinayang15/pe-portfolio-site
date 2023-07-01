@@ -1,5 +1,5 @@
 .myImg {
-    width: 450px;
+    width: 550px;
     height: 425px;
     border-radius: 10px;
     border: 2px solid black;
@@ -8,8 +8,8 @@
 }
 
 .aboutImg {
-    width: 450px;
-    height: 450px;
+    width: 380px;
+    height: 550px;
     border-radius: 10px;
     border: 2px solid black;
     box-shadow: 5px 7px black;
@@ -39,7 +39,7 @@
 
 
 .about {
-    background-color: #9AADBF
+    background-color: #9AADBF;
 }
 
 section {

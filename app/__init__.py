@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', name="Caleb Aguirre-Leon", url=os.getenv("URL"),)
+    return render_template('index.html', name="Tina Yang", url=os.getenv("URL"),)
 
 @app.route ('/experience')
 def experience():
