@@ -24,7 +24,7 @@
 }
 
 .home {
-    background-color: #6D98BA
+    background-color: #f2e3ea
 }
 
 .home-text {
@@ -39,7 +39,7 @@
 
 
 .about {
-    background-color: #9AADBF;
+    background-color: #f4cdcf;
 }
 
 section {
@@ -214,7 +214,7 @@ section {
     left: 0;
     height: 100%;
     width: 100%;
-    background: #6D98BA;
+    background: #f2e3ea;
     border-left: 2px solid black;
     animation: typing 3.0s steps(14) forwards;
 }
