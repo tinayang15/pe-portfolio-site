@@ -98,9 +98,9 @@ section {
 }
 
 .timeline-badge {
-    background-color: #007bff;
+    background-color: #8db580;
     border-radius: 50%;
-    color: #fff;
+    /* color: red; */
     font-size: 16px;
     height: 40px;
     left: 0;
@@ -112,7 +112,7 @@ section {
 }
 
 .timeline-panel {
-    background-color: #f7f7f7;
+    background-color: #f1e7e4;
     border: 1px solid #d4d4d4;
     border-radius: 2px;
     margin-left: 60px;
@@ -204,6 +204,13 @@ section {
 
 .container {
     padding: 160px 15% 120px;
+    background-color: #F4CDCF;
+    background-size: cover;
+}
+
+body {
+    background-color: #F4CDCF;
+    background-size: cover;
 }
 
 .intro {
