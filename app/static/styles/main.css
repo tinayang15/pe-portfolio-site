@@ -21,6 +21,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    height: auto;
 }
 
 .home {
@@ -179,7 +181,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%
+    width: 100%;
 }
 
 .intro .introduction {
@@ -190,8 +192,8 @@ section {
 
 .intro .name {
     margin-left: -25px;
-    height: 30px;
-    line-height: 30px;
+    /* height: 100px; */
+    /* line-height: 30px; */
     overflow: hidden;
 }
 
@@ -209,21 +211,24 @@ section {
     text-shadow: 2px 2px 4px rgb(119, 119, 173);
 }
 
+
 .name li span::after {
     content: '';
     position: absolute;
     left: 0;
+    bottom: 0;
+    margin-bottom: -4px;
     height: 100%;
     width: 100%;
     background: #f2e3ea;
     border-left: 2px solid black;
-    animation: typing 3.0s steps(14) forwards;
+    animation: typing 3.0s steps(21) forwards;
 }
 
 @keyframes typing {
     100% {
         left: 100%;
-        margin: 0 -35px 0 35px;
+        margin: 5 -35px 0 35px;
     }
 }
 
