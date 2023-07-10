@@ -118,6 +118,7 @@ section {
     margin-left: 60px;
     padding: 20px;
     position: relative;
+
 }
 
 .timeline-heading h4 {
@@ -129,9 +130,38 @@ section {
     color: #999999;
 }
 
-.timeline-body p {
-    margin-bottom: 0;
+.timeline-body {
+    display: flex;
+    flex-direction: column;
+
 }
+
+.icons {
+    display: flex;
+    flex-direction: row;
+}
+
+/* #layer i {
+    color: var(--main-color);
+    margin-top: 20px;
+    margin-right: 5px;
+    font-size: 20px;
+    background: var(--text-color);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%
+}
+
+.row:hover img {
+    transform: scale(1.1);
+}
+
+.row:hover .layer {
+    height: 100%;
+} */
 
 .timeline .timeline-title {
     margin-top: 0;
@@ -252,4 +282,10 @@ section {
     color: white;
     text-decoration: none;
     font-weight: 600;
+}
+
+.img {
+    width: 620px;
+    height: 400px;
+    transition: transform 0.5s;
 }
