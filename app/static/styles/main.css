@@ -48,6 +48,7 @@ section {
     padding: 160px 15% 120px;
 }
 
+
 .btn:hover {
     transform: scale(0.9);
 }
@@ -240,4 +241,10 @@ section {
 
 .brand {
     font-style: italic;
+}
+
+.resume {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
 }
