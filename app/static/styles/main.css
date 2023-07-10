@@ -2,8 +2,8 @@
     width: 550px;
     height: 425px;
     border-radius: 10px;
-    border: 2px solid black;
-    box-shadow: 5px 7px black;
+    border: 5px solid #f4cdcf;
+    box-shadow: 3px 4px #f4cdcf;
     margin: 0 80px 0 0;
 }
 
@@ -11,8 +11,8 @@
     width: 380px;
     height: 550px;
     border-radius: 10px;
-    border: 2px solid black;
-    box-shadow: 5px 7px black;
+    border: 5px solid #F1E7E4;
+    box-shadow: 3px 4px #F1E7E4;
     margin: 0 0 0 80px;
 }
 
