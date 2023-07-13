@@ -56,3 +56,11 @@ def post_time_line_post():
 
     return model_to_dict(timeline_post)
 
+@app.route('/api/timeline_post', methods = ['GET'])
+def get_time_line_post():
+    return {
+        'timeline_posts': [
+            model_to_dict(p)
+            for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
+        ]
+    }
