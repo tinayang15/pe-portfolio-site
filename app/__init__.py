@@ -2,6 +2,8 @@ import os
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 from peewee import *
+import datetime
+from playhouse.shortcuts import model_to_dict
 
 load_dotenv()
 app = Flask(__name__)
@@ -15,6 +17,21 @@ mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
 
 print(mydb)
 
+class TimelinePost(Model):
+    name = CharField()
+    tool = CharField()
+    content = TextField()
+    image = CharField()
+    github = CharField()
+    deploy = CharField()
+    created_at = DateTimeField(default=datetime.datetime.now)
+
+    class Meta:
+        database = mydb
+
+mydb.connect()
+mydb.create_tables([TimelinePost])
+
 @app.route('/')
 def index():
     return render_template('index.html', name="Tina Yang", url=os.getenv("URL"),)
@@ -26,3 +43,16 @@ def experience():
 @app.route('/hobbies')
 def hobbies():
     return render_template('hobbies.html', hobby2="Photography")
+
+@app.route('/api/timeline_post', methods=['POST'])
+def post_time_line_post():
+    name = request.form['name']
+    tool = request.form['tool']
+    content = request.form['content']
+    image = request.form['image']
+    github = request.form['github']
+    deploy = request.form['deploy']
+    timeline_post = TimelinePost.create(name=name, tool=tool, content=content, image=image, github=github, deploy=deploy)
+
+    return model_to_dict(timeline_post)
+
