@@ -44,6 +44,10 @@ def experience():
 def hobbies():
     return render_template('hobbies.html', hobby2="Photography")
 
+@app.route('/timeline')
+def timeline():
+    return render_template('timeline.html', title="Timeline")
+
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
     name = request.form['name']
@@ -76,3 +80,4 @@ def delete_time_line_post(post_id):
         return {'error': 'Timeline post not found'}, 404
     except:
         return {'error': 'Failed to delete timeline post'}, 500
+

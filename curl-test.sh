@@ -2,7 +2,7 @@
 
 # curl http://127.0.0.1:5000/api/timeline_post
 
-# curl -X POST http://127.0.0.1:5000/api/timeline_post -d "content=Med-Minder is an application that allows healthcare administration to personalize a list of medications for each patient. Within each medication added, you are able to include prescription directions.&deploy=https://swish-sesh.herokuapp.com/&github=https://github.com/mannyaalonso/swish-sesh&image=../static/img/Swish-sesh.png&name=Med-Minder&tool=React | MongoDB | Express | Node | CSS"
+# curl -X POST http://127.0.0.1:5000/api/timeline_post -d "content=Math Enchanter is a game that tests your ability to do addition math using single and double digit numbers. This game consist of 3 different levels and your end-goal is to become a pure-blood Enchanter.&deploy=http://math-enchanter.surge.sh/index.html&github=https://github.com/tinayang15/Math-Enchanter&image=./static/img/MatchEnchanter.png&name=Math Enchanter&tool=HTML | CSS | JavaScript"
 
 cd /Users/tinayang/MLH/Portfolio/pe-portfolio-site
 
