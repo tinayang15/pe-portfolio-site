@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/zsh
 
 tmux kill-session -a
 
-cd pe-portfolio-site
+cd /Users/tinayang/MLH/Portfolio/pe-portfolio-site
 
 git fetch && git reset origin/main --hard
 
