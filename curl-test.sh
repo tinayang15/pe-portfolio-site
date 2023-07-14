@@ -4,7 +4,7 @@
 
 # curl -X POST http://127.0.0.1:5000/api/timeline_post -d "content=Med-Minder is an application that allows healthcare administration to personalize a list of medications for each patient. Within each medication added, you are able to include prescription directions.&deploy=https://swish-sesh.herokuapp.com/&github=https://github.com/mannyaalonso/swish-sesh&image=../static/img/Swish-sesh.png&name=Med-Minder&tool=React | MongoDB | Express | Node | CSS"
 
-cd /root/pe-portfolio-site
+cd /Users/tinayang/MLH/Portfolio/pe-portfolio-site
 
 # Variables for API endpoint URLs
 GET_ENDPOINT="http://127.0.0.1:5000/api/timeline_post"
