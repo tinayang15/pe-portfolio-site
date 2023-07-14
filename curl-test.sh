@@ -9,7 +9,7 @@ cd /Users/tinayang/MLH/Portfolio/pe-portfolio-site
 # Variables = API endpoint URLs
 GET_ENDPOINT="http://127.0.0.1:5000/api/timeline_post"
 POST_ENDPOINT="http://127.0.0.1:5000/api/timeline_post"
-DELETE_ENDPOINT="http://127.0.0.1:5000/api/timeline_post/5"
+DELETE_ENDPOINT="http://127.0.0.1:5000/api/timeline_post/9"
 
 # Function to create a random timeline post
 create_timeline_post() {

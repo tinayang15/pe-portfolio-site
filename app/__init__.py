@@ -44,9 +44,14 @@ def experience():
 def hobbies():
     return render_template('hobbies.html', hobby2="Photography")
 
+# @app.route('/timeline')
+# def timeline():
+#     return render_template('timeline.html', title="Timeline")
+
 @app.route('/timeline')
 def timeline():
-    return render_template('timeline.html', title="Timeline")
+    timeline_posts = TimelinePost.select().order_by(TimelinePost.created_at.desc())
+    return render_template('timeline.html', timeline_posts=timeline_posts)
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():

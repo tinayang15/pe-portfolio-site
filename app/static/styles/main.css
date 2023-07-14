@@ -296,3 +296,7 @@ body {
     height: 400px;
     transition: transform 0.5s;
 }
+
+.postForm {
+    margin-top: 130px;
+}
