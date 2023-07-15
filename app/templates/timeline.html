@@ -13,47 +13,31 @@
     <div class="postForm">
         <form action="/api/timeline_post" method="post">
             <div class="row mb-3">
-                <label for="projectName" class="col-sm-2 col-form-label">Project Name</label>
-                <div class="col-sm-10">
-
-                    <input type="text" class="form-control" id="projectName" name="name" placeholder="Project Name"
+                <label for="projectName" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="projectName" name="name" placeholder="Your Name"
                         required>
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="toolsUsed" class="col-sm-2 col-form-label">Tools Used</label>
-                <div class="col-sm-10">
-
-                    <input type="text" class="form-control" id="toolsUsed" name="tool" placeholder="Tools Used"
+                <label for="toolsUsed" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="toolsUsed" name="email" placeholder="Enter Email"
                         required>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <label for="projectDescription" class="col-sm-2 col-form-label">Project Description</label>
-                <textarea class="form-control" id="projectDescription" name="content"
-                    placeholder="Write a brief description of the project!" required></textarea>
             </div>
             <div class="row mb-3">
                 <label for="imageURL" class="col-sm-2 col-form-label">Image URL</label>
-                <div class="col-sm-10">
+                <div class="col-sm-3">
 
                     <input type="text" class="form-control" id="imageURL" name="image" placeholder="Image URL" required>
                 </div>
             </div>
-            <div class="row mb-3">
-                <label for="githubURL" class="col-sm-2 col-form-label">GitHub URL</label>
-                <div class="col-sm-10">
-
-                    <input type="text" class="form-control" id="githubURL" name="github" placeholder="GitHub URL"
-                        required>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label for="deployURL" class="col-sm-2 col-form-label">Deployment URL</label>
-                <div class="col-sm-10">
-
-                    <input type="text" class="form-control" id="deployURL" name="deploy" placeholder="Deployment URL"
-                        required>
+            <div class="row mb-7">
+                <label for="projectDescription" class="col-sm-2 col-form-label">Content</label>
+                <div class="col-sm-3">
+                    <textarea class="form-control" id="projectDescription" name="content"
+                        placeholder="Tell me what's on your mind!" required></textarea>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Create Post</button>
@@ -61,25 +45,20 @@
     </div>
 
 
+    <h1>My Timeline</h1>
     {% for post in timeline_posts %}
     <!-- <div class="container"> -->
-    <h1>My Projects</h1>
     <ul class="timeline">
         <li>
             <div class="timeline-badge" style="background-color: #1f1a38;"></div>
             <div class="timeline-panel">
                 <div class="timeline-heading">
                     <h4 class="timeline-title">{{post.name}}</h4>
-                    <p>{{post.tool}}</p>
+                    <p>{{post.email}}</p>
                     <p><small class="text-muted">{{post.content}}</small></p>
                 </div>
                 <div class="timeline-body" id="layer">
                     <img class="img" src="{{post.image}}" alt="">
-                    <div class="icons">
-                        <a class="githublink" href="{{post.github}}"><i class='bx bxl-github'
-                                style="font-size: 60px;"></i></a>
-                        <a href="{{post.deploy}}"><i class='bx bx-link-external' style="font-size: 60px;"></i></a>
-                    </div>
                 </div>
             </div>
         </li>
@@ -92,23 +71,3 @@
 </body>
 
 </html>
-<!-- <form action="/api/timeline_post" method="post">
-    <input type="text" name="name" placeholder="Project Name" required>
-    <input type="text" name="tool" placeholder="Tools Used" required>
-    <textarea name="content" placeholder="Write a brief description of project!" required></textarea>
-    <input type="text" name="image" placeholder="Image URL" required>
-    <input type="text" name="github" placeholder="GitHub URL" required>
-    <input type="text" name="deploy" placeholder="Deploy URL" required>
-    <button type="submit">Create Post</button>
-</form>
-
-{% for post in timeline_posts %}
-<div class="post">
-    <h3>{{post.name}}</h3>
-    <p>{{post.tool}}</p>
-    <p>{{post.content}}</p>
-    <img src="{{post.image}}" alt="Posts Image">
-    <a href="{{post.github}}" target="_blank">GitHub</a>
-    <a href="{{post.deploy}}" target="_blank">Deployment</a>
-</div>
-{% endfor %} -->

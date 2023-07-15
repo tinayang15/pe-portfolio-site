@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from dotenv import load_dotenv
 from peewee import *
 import datetime
@@ -19,11 +19,9 @@ print(mydb)
 
 class TimelinePost(Model):
     name = CharField()
-    tool = CharField()
+    email = CharField()
     content = TextField()
     image = CharField()
-    github = CharField()
-    deploy = CharField()
     created_at = DateTimeField(default=datetime.datetime.now)
 
     class Meta:
@@ -56,14 +54,12 @@ def timeline():
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
     name = request.form['name']
-    tool = request.form['tool']
+    email = request.form['email']
     content = request.form['content']
     image = request.form['image']
-    github = request.form['github']
-    deploy = request.form['deploy']
-    timeline_post = TimelinePost.create(name=name, tool=tool, content=content, image=image, github=github, deploy=deploy)
+    timeline_post = TimelinePost.create(name=name, email=email, content=content, image=image)
 
-    return model_to_dict(timeline_post)
+    return redirect(url_for('timeline'))
 
 @app.route('/api/timeline_post', methods = ['GET'])
 def get_time_line_post():
