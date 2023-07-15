@@ -30,7 +30,7 @@
                 <label for="imageURL" class="col-sm-2 col-form-label">Image URL</label>
                 <div class="col-sm-3">
 
-                    <input type="text" class="form-control" id="imageURL" name="image" placeholder="Image URL" required>
+                    <input type="text" class="form-control" id="imageURL" name="image" placeholder="Image URL">
                 </div>
             </div>
             <div class="row mb-7">
@@ -44,30 +44,66 @@
         </form>
     </div>
 
-
-    <h1>My Timeline</h1>
-    {% for post in timeline_posts %}
-    <!-- <div class="container"> -->
-    <ul class="timeline">
-        <li>
-            <div class="timeline-badge" style="background-color: #1f1a38;"></div>
-            <div class="timeline-panel">
-                <div class="timeline-heading">
-                    <h4 class="timeline-title">{{post.name}}</h4>
-                    <p>{{post.email}}</p>
-                    <p><small class="text-muted">{{post.content}}</small></p>
+    <div class="timelineContainer">
+        <h1>My Timeline</h1>
+        {% for post in timeline_posts %}
+        <!-- <div class="container"> -->
+        <ul class="timeline">
+            <li>
+                <div class="timeline-badge" style="background-color: #1f1a38;"></div>
+                <div class="timeline-panel" id="timeline-panel">
+                    <div class="timeline-heading">
+                        <div class="timeline-body" id="layer">
+                            <img class="img" src="{{post.image}}" alt="anonymous"
+                                onerror="this.src='../static/img/anonymous.png'">
+                            <h4 class="timeline-title">{{post.name}}</h4>
+                        </div>
+                        <!-- <p>{{post.email}}</p> -->
+                        <p><small class="text-muted">{{post.content}}</small></p>
+                    </div>
                 </div>
-                <div class="timeline-body" id="layer">
-                    <img class="img" src="{{post.image}}" alt="">
-                </div>
-            </div>
-        </li>
+            </li>
 
-        {% endfor %}
+            {% endfor %}
 
-        <!-- </div> -->
+            <!-- </div> -->
+    </div>
 
-        {% include "scripts.html" %}
+    <style>
+        .text-muted {
+            font-size: 20px;
+        }
+
+        .timeline-panel {
+            width: 600px;
+            max-height: 300px;
+            overflow-y: scroll
+        }
+
+        .timeline-body {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .timeline-title {
+            margin: 0 30px;
+        }
+
+        .timelineContainer {
+            margin-left: 200px;
+        }
+
+        .img {
+            width: 150px;
+            height: 120px;
+            border-radius: 90px;
+            border: 2px solid #6D98BA;
+        }
+    </style>
+
+    {% include "scripts.html" %}
 </body>
 
 </html>
