@@ -16,6 +16,8 @@ class AppTestCase(unittest.TestCase):
         html = response.get_data(as_text=True)
         assert "<title>Tina Yang</title>" in html
         # TODO Add more tests relating to the home page
+        assert "Hello, I'm Tina Yang!" in html
+        assert "Site Reliability Engineer" in html
 
     def test_timeline(self):
         response = self.client.get("/api/timeline_post")
