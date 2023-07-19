@@ -49,3 +49,24 @@ class AppTestCase(unittest.TestCase):
         html = response.get_data(as_text=True)
         assert "<h1>My Timeline</h1>" in html
         assert "Create Post" in html
+
+    def test_malformed_timeline_post(self):
+        #POST request missing name
+        response = self.client.post("/api/timeline_post", data={"email": "john@example.com", "content": "Hello World, I'm John!"})
+        assert response.status_code == 400
+        # html = response.get_data(as_text=True)
+        json_response = response.get_json()
+        assert "Invalid name" in json_response['message']
+
+        #POST request with empty content
+        response = self.client.post("/api/timeline_post", data={"name":"John Doe", "email": "john@example.com", "content": ""})
+        assert response.status_code == 400
+        # html = response.get_data(as_text=True)
+        json_response = response.get_json()
+        assert "Invalid content" in json_response['message']
+
+        #POST request with malformed email
+        response = self.client.post("/api/timeline_post", data={"name":"John Doe", "email": "not-an-email", "content": "Hello World, I'm John!"})
+        assert response.status_code == 400
+        json_response = response.get_json()
+        assert "Invalid email" in json_response['message']
