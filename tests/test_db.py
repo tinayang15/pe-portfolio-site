@@ -32,6 +32,24 @@ class TestTimelinePost(unittest.TestCase):
             name='John Doe', email='john@example.com', content='Hello World, I\'m John!', image='test')
         assert first_post.id == 1
         second_post = TimelinePost.create(
-            name='Jane Doe', email='jane@example.com', content='Hello world, I\'m Jane!',image='test')
+            name='Jane Doe', email='jane@example.com', content='Hello World, I\'m Jane!',image='test')
         assert second_post.id == 2
         # TODO: Get timeline posts and assert that they are correct
+        all_posts = TimelinePost.select()
+
+        self.assertEqual(all_posts.count(), 2)
+
+        retrieved_first_post = all_posts[0]
+        self.assertEqual(retrieved_first_post.name, 'John Doe')
+        self.assertEqual(retrieved_first_post.email, 'john@example.com')
+        self.assertEqual(retrieved_first_post.content, 'Hello World, I\'m John!')
+        self.assertEqual(retrieved_first_post.image, 'test')
+
+        retrieved_first_post = all_posts[1]
+        self.assertEqual(retrieved_first_post.name, 'Jane Doe')
+        self.assertEqual(retrieved_first_post.email, 'jane@example.com')
+        self.assertEqual(retrieved_first_post.content, 'Hello World, I\'m Jane!')
+        self.assertEqual(retrieved_first_post.image, 'test')
+
+if __name__== '__main__':
+    unittest.main()
