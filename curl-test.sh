@@ -2,7 +2,7 @@
 
 # curl http://127.0.0.1:5000/api/timeline_post
 
-# curl -X POST http://127.0.0.1:5000/api/timeline_post -d "content=Hi&email=testing@email.com&image=./static/img/MatchEnchanter.png&name=Math Enchanter"
+# curl -X POST http://127.0.0.1:5000/api/timeline_post -d "content=Hi&email=testing@email.com&image=test&name=Enchanter"
 
 cd /Users/tinayang/MLH/Portfolio/pe-portfolio-site
 
