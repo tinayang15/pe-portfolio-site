@@ -4,7 +4,7 @@ import unittest
 import os
 os.environ['TESTING'] = 'true'
 
-from app import app
+from app import app, TimelinePost
 
 class AppTestCase(unittest.TestCase):
     def setUp(self):
@@ -27,4 +27,25 @@ class AppTestCase(unittest.TestCase):
         assert "timeline_posts" in json
         assert len(json["timeline_posts"]) == 0
         #TODO add more tests relating to the /api/timeline_post GET and POST apis
+
+        data = {
+            "name": "John Doe",
+            "email": "john@example.com",
+            "content": "Hello World, I\'m John",
+            "image": "test"
+        }
+
+        response = self.client.post("/api/timeline_post", data=data)
+        assert response.status_code == 302
+
+        new_post = TimelinePost.get_or_none(name=data["name"], email=data["email"])
+        assert new_post is not None
+        assert new_post.content == data ["content"]
+        assert new_post.image == data["image"]
         #TODO add more tests relating to the timeline page
+    def test_timeline_page_rendering(self):
+        response = self.client.get("/timeline")
+        assert response.status_code == 200
+        html = response.get_data(as_text=True)
+        assert "<h1>My Timeline</h1>" in html
+        assert "Create Post" in html
