@@ -1,5 +1,5 @@
 import os, re
-from flask import Flask, render_template, request, redirect, url_for, abort, jsonify, make_response
+from flask import Flask, render_template, request, redirect, url_for
 from dotenv import load_dotenv
 from peewee import *
 import datetime
@@ -57,24 +57,24 @@ def timeline():
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
+
     name = request.form['name']
+    if not name or name == "":
+        return "Invalid name", 400
+    
     email = request.form['email']
+    if not email or email == "" or not re.match(r'^[\w\.-]+@[\w\.-]+\.\w+$', email):
+        return "Invalid email", 400
+    
     content = request.form['content']
+    if not content or content == "":
+        return "Invalid content", 400
+    
     image = request.form['image']
 
-    if not name:
-        response = make_response(jsonify(message="Invalid name"), 400)
-        return response
-    if not content:
-        response = make_response(jsonify(message="Invalid content"), 400)
-        return response
-    if not email or not re.match(r'^[\w\.-]+@[\w\.-]+\.\w+$', email):
-        response = make_response(jsonify(message="Invalid email"), 400)
-        return response
-    
     timeline_post = TimelinePost.create(name=name, email=email, content=content, image=image)
 
-    return redirect(url_for('timeline')), 302, {'Content-Type': 'text/plain; charset=utf-8'}
+    return redirect(url_for('timeline'))
 
 @app.route('/api/timeline_post', methods = ['GET'])
 def get_time_line_post():
