@@ -47,7 +47,7 @@ class AppTestCase(unittest.TestCase):
         response = self.client.get("/timeline")
         assert response.status_code == 200
         html = response.get_data(as_text=True)
-        assert "<h1>My Timeline</h1>" in html
+        assert "<h1>Tina's Timeline Posts!</h1>" in html
         assert "Create Post" in html
 
     def test_malformed_timeline_post(self):
